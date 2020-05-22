@@ -107,6 +107,52 @@
 
                 </Grid>
             </TabItem>
+
+            <TabItem Header="text to url">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBox Grid.Row="0" Grid.Column="0" Name="Txt2UrlSrc" Height="Auto" Width="Auto" Margin="2 2 2 2"
+                             VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" TextWrapping="Wrap" />
+
+                    <TextBox Grid.Row="1" Grid.Column="0" Name="Txt2UrlDst" Height="Auto" Width="Auto" Margin="2 2 2 2"
+                             VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" TextWrapping="Wrap" />
+
+                    <Button Grid.Row="2" Grid.Column="0" Name="Txt2UrlDo" Height="Auto" Width="120px" Margin="2 2 2 2"
+                            Content="Run" Click="Txt2UrlDo_Click" />
+
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="url to text">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBox Grid.Row="0" Grid.Column="0" Name="Url2TxtSrc" Height="Auto" Width="Auto" Margin="2 2 2 2"
+                             VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" TextWrapping="Wrap" />
+
+                    <TextBox Grid.Row="1" Grid.Column="0" Name="Url2TxtDst" Height="Auto" Width="Auto" Margin="2 2 2 2"
+                             VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" TextWrapping="Wrap" />
+
+                    <Button Grid.Row="2" Grid.Column="0" Name="Url2TxtDo" Height="Auto" Width="120px" Margin="2 2 2 2"
+                            Content="Run" Click="Url2TxtDo_Click" />
+
+                </Grid>
+            </TabItem>
             
         </TabControl>
     </Grid>

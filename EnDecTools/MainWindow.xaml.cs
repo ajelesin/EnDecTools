@@ -1,20 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-
-namespace EnDecTools
+﻿namespace EnDecTools
 {
+    using System;
+    using System.Linq;
+    using System.Text;
+    using System.Web;
+    using System.Windows;
+
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
@@ -23,6 +14,11 @@ namespace EnDecTools
         public MainWindow()
         {
             InitializeComponent();
+
+            var path = AppDomain.CurrentDomain.BaseDirectory;
+            var vers = GetType().Assembly.GetName().Version.ToString();
+
+            Title = $"{path} - {vers}";
         }
 
         private void B64toHexDo_Click(object sender, RoutedEventArgs e)
@@ -98,6 +94,44 @@ namespace EnDecTools
                 dst = Encoding.UTF8.GetString(bytes);
 
                 Hex2TxtDst.Text = dst;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void Txt2UrlDo_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                var src = Txt2UrlSrc.Text;
+                string dst = string.Empty;
+
+                if (string.IsNullOrWhiteSpace(src)) return;
+
+                dst = HttpUtility.UrlEncode(src);
+
+                Txt2UrlDst.Text = dst;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void Url2TxtDo_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                var src = Url2TxtSrc.Text;
+                string dst = string.Empty;
+
+                if (string.IsNullOrWhiteSpace(src)) return;
+
+                dst = HttpUtility.UrlDecode(src);
+
+                Url2TxtDst.Text = dst;
             }
             catch (Exception ex)
             {
